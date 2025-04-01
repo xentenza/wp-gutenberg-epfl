@@ -82,14 +82,7 @@ registerBlockType( 'epfl/mosaic-deck', {
                 </InspectorControls>
                 <div className={ className }>
                         <h2 className="epfl-block-title">{ __('EPFL News Mosaic', 'epfl') }</h2>
-                        <InnerBlocks
-                            template={ TEMPLATE }
-                            /* We could lock template to deny adding new blocks but even if we remove the locking inside epfl/card-panel, there's a bug and the system removes the
-                             block inside epfl/card-panel block.
-                             So, as workaround, we don't lock but limit new blocks to 'epfl/card-panel'. And because this block is not present in the white list in
-                             this plugin (plugin.php), we won't be able to add new blocks inside and epfl/mosaic-deck block */
-                            allowedBlocks={['epfl/mosaic-panel']}
-                           />
+                        <InnerBlocks allowedBlocks={ ['epfl/mosaic-panel'] } />
                 </div>
             </Fragment>
 		)
